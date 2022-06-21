@@ -21,4 +21,9 @@ public class PasswordValidatorShould {
   void detect_invalid_password_due_to_less_than_eight_characters(){
     assertFalse(PasswordValidator.validate(("a_4deFg")));
   }
+
+  @Test
+  void detect_invalid_password_due_to_missing_capital_letter() {
+    assertFalse(PasswordValidator.validate(("a_4defghi")));
+  }
 }

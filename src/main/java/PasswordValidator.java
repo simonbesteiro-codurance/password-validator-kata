@@ -1,5 +1,5 @@
 public class PasswordValidator {
-  public static boolean validate(String a_4deFghi) {
+  public static boolean validate(String password) {
     return true;
   }
 }

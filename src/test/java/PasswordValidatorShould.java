@@ -32,4 +32,9 @@ public class PasswordValidatorShould {
   void detect_invalid_password_due_to_missing_lower_case_letter(){
     assertFalse(PasswordValidator.validate(("A_4DEFGHI")));
   }
+
+  @Test
+  void detect_invalid_password_due_to_missing_number() {
+    assertFalse(PasswordValidator.validate("a_cdeFghi"));
+  }
 }

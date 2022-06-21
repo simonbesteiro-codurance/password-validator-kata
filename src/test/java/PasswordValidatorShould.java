@@ -3,6 +3,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class PasswordValidatorShould {
   @Test
@@ -18,9 +20,13 @@ public class PasswordValidatorShould {
     assertTrue(PasswordValidator.validate("a_4deFghi"));
   }
 
-  @Test
-  void detect_invalid_password_due_to_less_than_eight_characters(){
-    assertFalse(PasswordValidator.validate(("a_4deFg")));
+  @ParameterizedTest
+  @ValueSource(strings = {
+      "a_4deFg",
+      "jklm6P_"
+  })
+  void detect_invalid_password_due_to_less_than_eight_characters(String password){
+    assertFalse(PasswordValidator.validate(password));
   }
 
   @Test

@@ -1,3 +1,4 @@
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
@@ -14,5 +15,10 @@ public class PasswordValidatorShould {
      * Contains an underscore
      */
     assertTrue(PasswordValidator.validate("a_4deFghi"));
+  }
+
+  @Test
+  void detect_invalid_password_due_to_less_than_eight_characters(){
+    assertFalse(PasswordValidator.validate(("a_4deFg")));
   }
 }

@@ -37,4 +37,8 @@ public class PasswordValidatorShould {
   void detect_invalid_password_due_to_missing_number() {
     assertFalse(PasswordValidator.validate("a_cdeFghi"));
   }
+  @Test
+  void detect_invalid_password_due_to_missing_underscore() {
+    assertFalse(PasswordValidator.validate("ab4deFghi"));
+  }
 }

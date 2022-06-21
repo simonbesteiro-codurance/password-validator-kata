@@ -1,6 +1,7 @@
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class PasswordValidatorShould {
@@ -25,5 +26,10 @@ public class PasswordValidatorShould {
   @Test
   void detect_invalid_password_due_to_missing_capital_letter() {
     assertFalse(PasswordValidator.validate(("a_4defghi")));
+  }
+
+  @Test
+  void detect_invalid_password_due_to_missing_lower_case_letter(){
+    assertFalse(PasswordValidator.validate(("A_4DEFGHI")));
   }
 }
